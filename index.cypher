@@ -217,7 +217,6 @@ CREATE (a)-[:DEPENDE_DE {peso: 1}]->(c);
 
 // Basado en las Hs. Sem. y Hs. Totales del Plan de Estudios 17.13 de la UNLu :contentReference[oaicite:0]{index=0}
 
-// Ciclo I
 MATCH (m:Materia {nombre: 'Introducción a la Programación'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Álgebra y Lógica Computacional'})
@@ -226,8 +225,6 @@ MATCH (m:Materia {nombre: 'Introducción a los Sistemas de Información'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Organización de Computadoras'})
 SET m.horasSem = 4, m.horasTotales = 64;
-
-// Ciclo II
 MATCH (m:Materia {nombre: 'Matemática Discreta'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Programación I'})
@@ -236,8 +233,6 @@ MATCH (m:Materia {nombre: 'Arquitectura de Computadoras'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Inglés I'})
 SET m.horasSem = 4, m.horasTotales = 64;
-
-// Ciclo III
 MATCH (m:Materia {nombre: 'Análisis Matemático I'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Programación II'})
@@ -246,8 +241,6 @@ MATCH (m:Materia {nombre: 'Sistemas de Información I'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Inglés II'})
 SET m.horasSem = 4, m.horasTotales = 64;
-
-// Ciclo IV
 MATCH (m:Materia {nombre: 'Análisis Matemático II'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Sistemas Operativos'})
@@ -256,8 +249,6 @@ MATCH (m:Materia {nombre: 'Programación Orientada a Objetos'})
 SET m.horasSem = 4, m.horasTotales = 64;
 MATCH (m:Materia {nombre: 'Base de Datos I'})
 SET m.horasSem = 6, m.horasTotales = 96;
-
-// Ciclo V
 MATCH (m:Materia {nombre: 'Sistemas de Información II'})
 SET m.horasSem = 4, m.horasTotales = 64;
 MATCH (m:Materia {nombre: 'Teleinformática y Redes'})
@@ -266,8 +257,6 @@ MATCH (m:Materia {nombre: 'Estadística y Probabilidad'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Programación Funcional y Lógica'})
 SET m.horasSem = 4, m.horasTotales = 64;
-
-// Ciclo VI
 MATCH (m:Materia {nombre: 'Sistemas de Información III'})
 SET m.horasSem = 4, m.horasTotales = 64;
 MATCH (m:Materia {nombre: 'Base de Datos II'})
@@ -276,8 +265,6 @@ MATCH (m:Materia {nombre: 'Aspectos Profesionales y Sociales'})
 SET m.horasSem = 4, m.horasTotales = 64;
 MATCH (m:Materia {nombre: 'Administración y Gestión de Redes'})
 SET m.horasSem = 6, m.horasTotales = 96;
-
-// Ciclo VII
 MATCH (m:Materia {nombre: 'Modelos, Simulación y Teoría de la Decisión'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Sistemas Distribuidos y Programación Paralela'})
@@ -286,8 +273,6 @@ MATCH (m:Materia {nombre: 'Programación en Ambiente Web'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Seminario de Integración Profesional'})
 SET m.horasSem = 6, m.horasTotales = 96;
-
-// Ciclo VIII (Licenciatura)
 MATCH (m:Materia {nombre: 'Teoría de la Computación I'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Base de Datos Masivas (Gestión y Análisis)'})
@@ -296,8 +281,6 @@ MATCH (m:Materia {nombre: 'Optativa I'})
 SET m.horasSem = 4, m.horasTotales = 64;
 MATCH (m:Materia {nombre: 'Sistemas de Información IV'})
 SET m.horasSem = 4, m.horasTotales = 64;
-
-// Ciclo IX (Licenciatura)
 MATCH (m:Materia {nombre: 'Sistemas Inteligentes'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Optativa II'})
@@ -308,8 +291,6 @@ MATCH (m:Materia {nombre: 'Recuperación de Información'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Taller de Tesina'})
 SET m.horasSem = 4, m.horasTotales = 64;
-
-// Ciclo X (Licenciatura)
 MATCH (m:Materia {nombre: 'Teoría de la Computación II'})
 SET m.horasSem = 6, m.horasTotales = 96;
 MATCH (m:Materia {nombre: 'Gestión de Proyectos'})
@@ -406,4 +387,76 @@ LIMIT 10;
 MATCH (m:Materia)
 RETURN m.cuatrimestre AS cuatrimestre,
        SUM(m.horasTotales) AS HorasTotalesDeTodasLasMaterias
-       ORDER BY m.cuatrimestre ASC
+       ORDER BY m.cuatrimestre ASC;
+
+//-------------------------------------------------------------------------------------------------------
+//Pensado durante 5 segundos
+//Aquí tienes un script completo para convertir tu dificultad en una ponderación
+//usable como peso en las relaciones DEPENDE_DE:
+// 1) Asigna a cada Materia una dificultad aleatoria 1–10
+MATCH (m:Materia)
+SET m.dificultad = toInteger(rand() * 10) + 1,
+
+    // 2) Calcula su versión normalizada [0.1 … 1.0]
+    m.dificultadNorm = toFloat(m.dificultad) / 10.0;
+
+// 3) Propaga esa ponderación a las relaciones
+MATCH (a:Materia)-[r:DEPENDE_DE]->(b:Materia)
+SET
+// peso “crudo” igual al valor 1 original o a la dificultad entera:
+r.dificultad = b.dificultad,
+
+// y una nueva propiedad ponderación normalizada [0.1…1.0]:
+r.ponderacion = b.dificultadNorm;
+
+//------------------------------------------------------------------------------------------------------------------------
+//PROMEDIO DE DIFICULTAD DE MATERIAS POR CUATRIMESTRE
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'I'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'II'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'III'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'IV'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'V'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'VI'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'VII'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'VIII'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'IX'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
+  UNION
+MATCH (N:Materia)
+WHERE N.cuatrimestre = 'X'
+RETURN N.cuatrimestre AS cuatrimestre,
+       (SUM(N.dificultad) / COUNT(N.nombre)) AS PromedioDeDificultad
