@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/ff82a2dc-05ed-4652-bdd7-df15a69a8232)
+
 **Modelado de Planes de Estudio UNLu en Neo4j**
 
 Este repositorio contiene un único script Cypher (`unlu.cypher`) que modela la totalidad de los planes de estudio de la Universidad Nacional de Luján (UNLu), incluyendo **Departamentos**, **Carreras** y **Materias**, junto con sus relaciones.
